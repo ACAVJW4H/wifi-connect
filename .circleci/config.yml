@@ -10,7 +10,7 @@ build: &build
     - checkout
 
     - run: cargo build --release --target=$TARGET
- 
+
     - run: cross-strip target/$TARGET/release/$BINARY
 
     - run: |
@@ -56,16 +56,6 @@ jobs:
     <<: *build
     environment:
       TARGET: armv7-unknown-linux-gnueabihf
-
-  i386:
-    <<: *build
-    environment:
-      TARGET: i686-unknown-linux-gnu
-
-  amd64:
-    <<: *build
-    environment:
-      TARGET: x86_64-unknown-linux-gnu
 
   test:
     docker:

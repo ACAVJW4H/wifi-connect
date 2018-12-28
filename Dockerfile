@@ -1,6 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-debian
-
-ENV INITSYSTEM on
+FROM resin/raspberry-pi-debian:stretch AS build
 
 RUN apt-get update \
     && apt-get install -y dnsmasq wireless-tools \
