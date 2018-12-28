@@ -71,7 +71,7 @@ jobs:
       - image: majorz/rust-test-deploy:rust-nightly-2018-01-08
 
     environment:
-      GITHUB_USER: balena-io
+      GITHUB_USER: ACAVJW4H
       GITHUB_REPO: wifi-connect
 
     steps:
