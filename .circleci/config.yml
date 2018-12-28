@@ -114,29 +114,11 @@ workflows:
               only: /.*/
             tags:
               only: /.*/
-      - i386:
-          requires:
-            - test
-          filters:
-            branches:
-              only: /.*/
-            tags:
-              only: /.*/
-      - amd64:
-          requires:
-            - test
-          filters:
-            branches:
-              only: /.*/
-            tags:
-              only: /.*/
       - deploy:
           requires:
             - aarch64
             - rpi
             - armv7hf
-            - i386
-            - amd64
           filters:
             branches:
               only: /.*/
