@@ -8,7 +8,7 @@ RUN apt-get update \
 WORKDIR /usr/src/app
 
 RUN curl https://api.github.com/repos/ACAVJW4H/wifi-connect/releases/latest -s \
-    | grep -hoP 'browser_download_url": "\K.*%%RESIN_ARCH%%\.tar\.gz' \
+    | grep -hoP 'browser_download_url": "\K.*linux-rpi\.tar' \
     | xargs -n1 curl -Ls \
     | tar -xvz -C /usr/src/app/
 
