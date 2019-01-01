@@ -200,7 +200,13 @@ fn connect(req: &mut Request) -> IronResult<Response> {
         let ssid = get_param!(params, "ssid", String);
         let identity = get_param!(params, "identity", String);
         let passphrase = get_param!(params, "passphrase", String);
-        (ssid, identity, passphrase)
+        /// BadgerConnect
+        let loc_code = get_param!(params, "loc_code", String);
+        let loc_name = get_param!(params, "loc_name", String);
+        let display_loc = get_param!(params, "display_loc", String);
+        let display_orientation = get_param!(params, "display_orientation", String);
+        let display_position = get_param!(params, "display_position", String);
+        (ssid, identity, passphrase, loc_code, loc_name, display_loc, display_orientation, display_position)
     };
 
     debug!("Incoming `connect` to access point `{}` request", ssid);

@@ -8,7 +8,7 @@ use std::ffi::OsStr;
 
 const DEFAULT_GATEWAY: &str = "192.168.42.1";
 const DEFAULT_DHCP_RANGE: &str = "192.168.42.2,192.168.42.254";
-const DEFAULT_SSID: &str = "WiFi Connect";
+const DEFAULT_SSID: &str = "Badger Connect";
 const DEFAULT_ACTIVITY_TIMEOUT: &str = "0";
 const DEFAULT_UI_DIRECTORY: &str = "ui";
 const DEFAULT_LISTENING_PORT: &str = "80";
@@ -23,6 +23,12 @@ pub struct Config {
     pub listening_port: u16,
     pub activity_timeout: u64,
     pub ui_directory: PathBuf,
+    /// BadgerConnect
+    pub loc_code: String,
+    pub loc_name: String,
+    pub display_loc: Option<String>,
+    pub display_orientation: Option<String>,
+    pub display_position: Option<String>,
 }
 
 pub fn get_config() -> Config {

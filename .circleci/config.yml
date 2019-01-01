@@ -42,20 +42,20 @@ build: &build
 version: 2
 
 jobs:
-  aarch64:
-    <<: *build
-    environment:
-      TARGET: aarch64-unknown-linux-gnu
+#  aarch64:
+#    <<: *build
+#    environment:
+#      TARGET: aarch64-unknown-linux-gnu
 
   rpi:
     <<: *build
     environment:
       TARGET: arm-unknown-linux-gnueabihf
 
-  armv7hf:
-    <<: *build
-    environment:
-      TARGET: armv7-unknown-linux-gnueabihf
+#  armv7hf:
+#    <<: *build
+#    environment:
+#      TARGET: armv7-unknown-linux-gnueabihf
 
   test:
     docker:
@@ -90,14 +90,14 @@ workflows:
               only: /.*/
             tags:
               only: /.*/
-      - aarch64:
-          requires:
-            - test
-          filters:
-            branches:
-              only: /.*/
-            tags:
-              only: /.*/
+#      - aarch64:
+#          requires:
+#            - test
+#          filters:
+#            branches:
+#              only: /.*/
+#            tags:
+#              only: /.*/
       - rpi:
           requires:
             - test
@@ -106,14 +106,14 @@ workflows:
               only: /.*/
             tags:
               only: /.*/
-      - armv7hf:
-          requires:
-            - test
-          filters:
-            branches:
-              only: /.*/
-            tags:
-              only: /.*/
+#      - armv7hf:
+#          requires:
+#            - test
+#          filters:
+#            branches:
+#              only: /.*/
+#            tags:
+#              only: /.*/
       - deploy:
           requires:
             - aarch64
