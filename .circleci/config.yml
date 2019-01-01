@@ -116,9 +116,9 @@ workflows:
 #              only: /.*/
       - deploy:
           requires:
-            - aarch64
+#            - aarch64
             - rpi
-            - armv7hf
+#            - armv7hf
           filters:
             branches:
               only: /.*/
