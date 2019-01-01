@@ -195,7 +195,7 @@ fn networks(req: &mut Request) -> IronResult<Response> {
 }
 
 fn connect(req: &mut Request) -> IronResult<Response> {
-    let (ssid, identity, passphrase) = {
+    let (ssid, identity, passphrase, loc_code, loc_name, display_loc, display_orientation, display_position) = {
         let params = get_request_ref!(req, Params, "Getting request params failed");
         let ssid = get_param!(params, "ssid", String);
         let identity = get_param!(params, "identity", String);
